@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap');
+  </style>
+
   <meta charset="utf-8">
-  <title>MOVIEEEES</title>
+  <title>Movie List API</title>
 </head>
+
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 100px">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="height: 150px; background-color:#000000">
     <div class="container">
-      <a class="navbar-brand" href="#">Free the Velib</a>
+      <a class="navbar-brand" href="#">Movies List API</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
         aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,7 +26,7 @@
         <ul class="navbar-nav mr-auto"></ul>
         <form class="form-inline my-2 my-lg-0">
           <li class="nav-item mr-sm-2">
-            <a class="nav-link" href="https://github.com/hsravo">Hsrao </a>
+            <a class="nav-link" href="https://github.com/hsravo">hsravo </a>
             <a class="nav-link" href="https://github.com/RigateStudio">RigateStudio </a>
           </li>
         </form>
@@ -28,20 +35,126 @@
   </nav>
   <!-- NAVBAR -->
 
-  <div class="container"></div>
+  <!-- PAGE CONTENT -->
+  <div style="background: linear-gradient(120deg, #082759, #00122e)">
+    </style>
+    <div class="container"
+      style="min-height: 594px; padding-top:80px; padding-bottom:90px; padding-right:100px ; padding-left:100px; display: block; margin-left: auto; margin-right: auto">
 
+      <div class="h1" style="color:whitesmoke; font-size: 180px; font-family: 'DM Sans', sans-serif;"> Hello !</div>
+      <div class="h1" style="color:whitesmoke; font-size: 65px; font-family: 'DM Sans', sans-serif;"> Welcome on the <a
+          href="http://www.omdbapi.com"> Open Movie </a> API based film library.</div>
+      <form class="form-inline my-2 my-lg-0">
+        <input id="moviefind" class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button id="submit" class="btn btn-secondary my-2 my-sm-0" type="button">Search</button>
+      </form>
 
-<div class="card" id ="selector" style="width:25rem">
-  <h2 id="stations"></h2>
-  <h5 id="capacity"></h5>
-  <h6 id="available-total"></h6>
-  <h6 id="available-ebike"></h6>
-</div>
-</div>
+      <div class="row" id="moviecards"></div>
 
+    </div>
 
+    <!-- FOOTER -->
+    <div class="divider footer-margin-top">
+      <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%"
+        height="96px" viewBox="0 0 100 100" version="1.1" preserveAspectRatio="none" class="injected-svg"
+        data-src="/packs/vendor/leap/pages/assets/img/dividers/divider-2-631ef50f46c3851bbff14c48201921be.svg">
+        <path d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z">
+        </path>
+      </svg>
+    </div>
+    <footer class="footer-margin-top page-footer font-small indigo" style="background-color:#000000">
 
+      <!-- Footer Links -->
+      <div class="container background-color">
+
+        <br>
+        <br>
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+          <!-- Grid columns -->
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">About us</a>
+            </h6>
+          </div>
+
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">Contact</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+        <hr class="my-1">
+
+        <!-- Grid row-->
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4 w-100">
+
+          <!-- Grid column -->
+          <div class="col-md-8 col-12 mt-5 w-100">
+            <p style="line-height: 1.7rem">Rejoignez-nous.</p>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+        <!-- Grid row-->
+        <div class="row pb-3">
+
+          <!-- Grid column -->
+          <div class="col-md-12">
+
+            <div class="mb-5 flex-center text-center">
+
+              <!-- Facebook -->
+              <a class="fb-ic">
+                <i class="fab fa-facebook-f fa-lg white-text mr-4" aria-hidden="true"> </i>
+              </a>
+              <!-- Twitter -->
+              <a class="tw-ic">
+                <i class="fab fa-twitter fa-lg white-text mr-4" aria-hidden="true"> </i>
+              </a>
+              <!-- Google +-->
+              <a class="gplus-ic">
+                <i class="fab fa-google-plus-g fa-lg white-text mr-4" aria-hidden="true"> </i>
+              </a>
+              <!--Linkedin -->
+              <a class="li-ic">
+                <i class="fab fa-linkedin-in fa-lg white-text mr-4" aria-hidden="true"> </i>
+              </a>
+              <!--Instagram-->
+              <a class="ins-ic">
+                <i class="fab fa-instagram fa-lg white-text mr-4" aria-hidden="true"> </i>
+              </a>
+              <!--Pinterest-->
+              <a class="pin-ic">
+                <i class="fab fa-pinterest fa-lg white-text" aria-hidden="true"> </i>
+              </a>
+            </div>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </div>
+      <!-- Footer Links -->
+
+      <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+      <!-- Copyright -->
+      <hr class="rgba-white-light" style="margin: 0 15%;">
+
+      <div class="footer-copyright text-center py-3"> © 2020
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+  </div>
+  </div>
 
   <script src="index.js"></script>
 </body>
+
 </html>

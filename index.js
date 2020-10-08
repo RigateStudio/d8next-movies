@@ -1,6 +1,30 @@
-const URL = "http://www.omdbapi.com/?apikey=42d3e6f7&"
+const apiKey = prompt("Entre ta clé d'API :");
+const moviecards = document.querySelector('#moviecards');
 
-fetch(URL, { method: 'GET'})
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((error) => console.error(error));
+const showMovies = (movies) => {
+  movies.forEach(movie => {
+    moviecards.innerHTML += `
+    <div class="card" style="width:15rem;height:25rem;margin:60px 25px 30px 25px">
+      <img class="card-img-top" src="${movie['Poster']}" alt="Card image cap" style="width:auto;max-width:25rem;height:auto;max-height:15rem;background-size:contain;object-fit:none;">
+      <div class="card-body">
+        <h5 class="card-title" style="color:black;font-family: 'DM Sans', sans-serif;text-overflow: ellipsis;overflow:hidden;white-space:nowrap;">${movie['Title']}</h5>
+        <h6 class="card-text" style="color:black;font-family: 'DM Sans', sans-serif;">${movie['Year']}</h6>
+        <button class="btn btn-outline-warning" style="font-family: 'DM Sans', sans-serif;margin-top:5px">Read more</button>
+      </div>
+    </div>
+  `
+  });
+}
+
+const searchWithAPI = (moviecard) => {
+
+    result = document.getElementById("moviefind").value;
+    fetch(`http://www.omdbapi.com/?s=${result}&apikey=${apiKey}`)
+        .then((response) => response.json())
+        .then((response) => showMovies(response['Search']))
+        .catch((error) => console.error(error))
+};
+
+document.getElementById("submit").onclick = () => {
+    searchWithAPI();
+}
